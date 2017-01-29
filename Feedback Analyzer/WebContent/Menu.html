@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Feedback Analyzer</title>
+<!-- internal styles -->
+<style type="text/css"> 
+
+	body {
+		background: url(./image/home_background.jpg);
+		background-size: 100% 850px;
+		background-repeat: no-repeat;
+		font-family: verdana;
+		padding: 50px;
+		overflow: hidden;
+		}
+		
+	.menuCompareLeftDiv{
+	
+		background-color: #ccccff;
+	}
+	
+	.menuCompareRightDiv{
+		
+		background-color: #b3c6ff;
+	
+	}
+
+	
+</style>
+<link rel="stylesheet" href="css/menu.css">
+<script src="chartjs/Chart.bundle.js"></script>
+<script src="chartjs/Chart.bundle.min.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript" src="js/jquery-3.1.0.min.js"></script>
+<script type="text/javascript" src="js/menu.js"></script>
+</head>
+
+<h1>Feedback Analyze System</h1>
+
+				<!-- Navigation Bar -->
+				
+				
+	<div id="frame">
+		<div id="nav">
+			<ul id="navmenu">
+			
+				<li><a href="#" id="showHomeMenu">Home</a></li>
+				
+				<li>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </li>
+				
+				<li><a href="#" id="program">Program</a>
+					<ul class="sub1"></ul>
+				</li>
+				
+				<li>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </li>
+				
+				<li><a href="#" id="analyze">Analyze</a>
+					<ul class="sub2"></ul>
+				</li>
+				
+				<li>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </li>
+				
+				<li><a href="#" id="showCompareMenu">Compare</a></li>
+				
+				<li>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </li>
+				
+				<li><a href="#" id="result">Result</a></li>
+				<li>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp </li>
+				
+				<li><a href="#" id="logout">Log out</a></li>
+			</ul>
+		
+		</div>
+
+<!-- -------------------------------------------------------------------------------------------------------------------- -->
+	
+				<!-- Home Division -->
+		
+		<div id="homeDiv" style="display:block">
+			<div>
+				<img class="img1" src="./image/home-back-1.png">
+				<img class="img2"src="./image/home-back-2.png">
+			</div>
+			<form action="CreateProgram.jsp">
+				<button class="but" type="submit">Create Survey</button>
+				<div id="main">
+					
+				</div>
+			</form>
+			<form action="Upload" method="GET">
+				<button class="but2" type="submit">Register respondent</button>
+			</form>
+			
+				<button class="but3" type="submit" id="upload-btn">Upload Response</button>
+			
+		</div>
+
+<!-- -------------------------------------------------------------------------------------------------------------------- -->
+		
+				<!-- Program Division -->
+				
+		<div id="progDiv" style="display:none">
+
+			
+			<table>
+				<tr>
+					<td>Date</td>
+					<td>:</td>
+					<td><input id="progDate" type="text" /></td>
+				</tr>
+				<tr>
+					<td>Program Name</td>
+					<td>:</td>
+					<td><textarea id="progDivName" /></textarea></td>
+				</tr>
+			</table>
+			<br>
+
+			<table border="1" id="progTable"></table>
+		</div>
+		
+		
+<!-- -------------------------------------------------------------------------------------------------------------------- -->
+		
+		<!-- Result of Analyze division -->
+			
+		<div id="analyzeResultDiv" style="display:none">
+		
+<!--        sub menu result           -->
+		
+			<div class="menuResultLeftDiv">
+				<table>
+					<tr>
+						<td>Program Name</td>     
+						<td>:</td> 
+						<td><textarea id="analyzeDivName"></textarea><br></td>
+					</tr>
+					<tr>
+						<td>No of Respondent</td> 
+						<td>:</td> 
+						<td><input id="total-res" type="text" /></td>
+					</tr>
+				</table>
+				<p>&nbsp</p>
+				
+				<ul class="menuUl"></ul>		<!-- for Overall result menu and stuff -->
+				
+				<div id="selections"></div>		<!-- for SECTION and SIGN dropdown -->
+				
+				<p>&nbsp</p>
+				
+				<ol class="questOl"></ol>		<!-- for QUESTION list -->
+				
+				
+	
+			</div>
+		
+<!--          Display result               -->
+		
+			<div class="menuResultRightDiv">			
+				
+				<div id="visualization"></div>
+				
+				<div class="noResult"></div>		<!-- For NO RESULT statement -->
+				
+				<div id="radarChartDiv" >
+					<canvas id="questResultChart"></canvas>
+				</div>
+			</div>
+		
+		</div>
+<!-- -----------------------------------------Compare---------------------------------------------------------------------- -->
+		
+		<!-- Compare Result of Analyze division -->
+		
+		<div id="compareDiv" style="display:none">
+		
+			<div class="menuCompareLeftDiv">
+			
+				<p id="noteText"></p>
+				
+				<ul class="compare-menuUl"></ul>		<!-- for Overall result menu and stuff -->
+				
+				<div id="compare-selections"></div>		<!-- for SECTION and SIGN dropdown -->
+				
+				<p>&nbsp</p>
+				
+				<ol class="compare-questOl"></ol>		<!-- for QUESTION list -->
+			
+			</div>
+			<div class="menuCompareRightDiv">
+				
+				<div id="selectCompareDiv" style="display:none">
+					
+				</div>
+					
+				<div id="twoProgramDiv" style="display:none">
+				
+					<div id="prog1" style="display: inline-block">
+						
+						<div id="compare-visualization-1"></div>
+					
+						<div class="compare-noResult-1"></div>		<!-- For NO RESULT statement -->
+						
+					</div>
+						
+					<div id="prog2" style="display: inline-block">
+					
+						<div id="compare-visualization-2"></div>
+					
+						<div class="compare-noResult-2"></div>		<!-- For NO RESULT statement -->
+						
+					</div>
+				</div>
+			</div>
+			
+		</div>
+		
+		<div id="finalResultDiv" style="display:none">
+	
+		</div>
+		
+	</div>
+	
+	
+</body>
+</html>
