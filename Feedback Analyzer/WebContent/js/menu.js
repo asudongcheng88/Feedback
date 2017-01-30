@@ -61,49 +61,7 @@ google.charts.setOnLoadCallback(function(){
 		var twoProgram = document.getElementById('twoProgramDiv');
 		var programSelectionDiv = document.getElementById('selectCompareDiv');
 		
-		//document.getElementById('questResultChart').innerHTML = "";
 		
-		//console.log(homeDiv);
-		//create RADAR CHART function
-		/*
-		function radarChart( placeHolder, labelData, pointData){
-			
-			var radarChart = new Chart(placeHolder, {	
-				type: 'radar',
-			    data: {
-			        labels: labelData,
-			        datasets: [{
-			            label: 'Top 5 Result',
-			            data: pointData,
-			            backgroundColor: [
-			                'rgba(255, 99, 132, 0.2)'
-			            ],
-			            borderColor: [
-			                
-			                'rgba(255, 159, 64, 1)'
-			            ],
-			            borderWidth: 3
-			        }]
-			    },
-			    options: {
-			        scales: {
-			            yAxes: [{
-			                ticks: {
-			                    beginAtZero:true
-			                }
-			            }]
-			        }
-			    }
-			});
-			
-			return radarChart;
-			
-		}
-		
-		*/
-		//var radarDiv = document.getElementById('radarChart');
-		
-		//radarDiv.innerHTML="";
 		
 		
 		
@@ -134,7 +92,7 @@ google.charts.setOnLoadCallback(function(){
 					//push data in sub menu for program
 					
 					for(var i=0; i<progList.length; i++){
-						li1.push('<li><a class="listProgMenu" href="#">' + progList[i].progName + '</a></li>');
+						li1.push('<a class="listProgMenu" href="#">' + progList[i].progName + '</a>');
 						
 					}
 					$($subMenu1).append($(li1.join('')));
@@ -143,7 +101,7 @@ google.charts.setOnLoadCallback(function(){
 					
 					for(var i=0; i<progList.length; i++){
 						
-						li2.push('<li class="listAnalyzeMenu"><a href="#">' + progList[i].progName + '</a></li>');
+						li2.push('<a class="listAnalyzeMenu" href="#">' + progList[i].progName + '</a>');
 						
 					}
 

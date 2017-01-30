@@ -31,6 +31,65 @@
 	/* rules for navigation menu */
 	/* ========================================== */
 	
+	#nav-position{
+	
+		margin-left: 300px;
+	}
+	
+	.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 10px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    margin-left: 50px;
+    
+}
+
+.sub1, .sub2 {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.sub1 a, .sub2 a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.sub1 a:hover, .sub2 a:hover  {background-color: #f1f1f1}
+
+
+.dropdown:hover .sub1, .dropdown:hover .sub2 {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+
+#showHomeMenu, #showCompareMenu, #result, #logout, #program, #analyze{
+	
+	 background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/*	
 	ul#navmenu {
 		width: 1045px;
 		margin: 0px auto;
@@ -38,14 +97,14 @@
 	}
 
 	ul#navmenu, ul.sub1{			/*submenu for program and menu position and style*/
-		list-style-type: none;
+/*		list-style-type: none;
 		font-size: 9pt;
 		margin-top: 10px;
 		margin-left: 300px;
 		}
 		
 	ul#navmenu, ul.sub2{			/*submenu for analyze and menu position and style*/
-		list-style-type: none;
+/*		list-style-type: none;
 		font-size: 9pt;
 		margin-top: 10px;
 		margin-left: 300px;
@@ -53,7 +112,7 @@
 		
 	ul#navmenu li {					/*menu position*/
 	
-		width: 125px;
+/*		width: 125px;
 		text-align: center;
 		position: relative;
 		float: left;
@@ -77,21 +136,22 @@
 		
 		}
 	ul#navmenu li:hover .sub1 {		/*for program*/
-		display: block;
+/*		display: block;
 	}
 	ul#navmenu li:hover .sub2 {		/*for analyze*/
-		display: block;
+/*		display: block;
 	}
 		
 	ul#navmenu ul.sub1 {		/*sub menu for program*/
-		display: none;
+/*		display: none;
 		position: absolute;
 		top: 16px;
 		left: -300px;
+		min-width: 120px;
 		}
 		
 	ul#navmenu ul.sub2 {		/*sub menu for analyze*/
-		display: none;
+/*		display: none;
 		position: absolute;
 		top: 16px;
 		left: -300px;
